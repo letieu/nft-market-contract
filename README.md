@@ -7,9 +7,17 @@
 4. Offer.sol: Contract for offer NFT
 3. Royalty.sol: Contract for royalty setup
 
-## Setup
+## Create new project from this template
 
 ```shell
+# Clone this repo
+
+# Remove .git folder
+rm -rf .git
+
+# Init new git
+git init
+
 # Install dependencies
 pnpm install # npm install
 
