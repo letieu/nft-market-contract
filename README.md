@@ -30,10 +30,10 @@ cp .env.example .env
 
 ## Deploy contract to a network
 
-```shell
+- Add private key to .env file, you can get private key from metamask
+- Add config to .env file
 
-# Add private key to .env file, you can get private key from metamask
-# Add config to .env file
+```shell
 
 # Deploy marketplace
 npx hardhat run scripts/deploy/marketplace.ts --network mumbai
@@ -44,6 +44,7 @@ npx hardhat run scripts/deploy/offer.ts --network mumbai
 # Deploy royalty
 npx hardhat run scripts/deploy/royalty.ts --network mumbai
 
+# Config royalty
 # Add deployed contract address to .env file
 # Run config scripts
 npx hardhat run scripts/config/royalty.ts --network mumbai
