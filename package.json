@@ -35,6 +35,7 @@
     "typescript": ">=4.5.0"
   },
   "dependencies": {
-    "@openzeppelin/hardhat-upgrades": "^1.24.0"
+    "@openzeppelin/hardhat-upgrades": "^1.24.0",
+    "hardhat-abi-exporter": "^2.10.1"
   }
 }

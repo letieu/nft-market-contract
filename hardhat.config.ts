@@ -1,6 +1,7 @@
 import { HardhatUserConfig } from "hardhat/config";
 import '@openzeppelin/hardhat-upgrades';
 import "@nomicfoundation/hardhat-toolbox";
+import "hardhat-abi-exporter";
 import { config as envConfig } from "dotenv";
 
 envConfig();

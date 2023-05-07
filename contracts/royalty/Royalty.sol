@@ -3,6 +3,7 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 import './IRoyalty.sol';
 
@@ -25,6 +26,14 @@ contract Royalty is IRoyalty, Initializable, OwnableUpgradeable {
 
   function setRoyalty(address _collection, address _payee, uint16 _royalty) external override onlyOwner {
     require(_royalty <= 10000, "Royalty must be less than 10000");
+    collectionPayee[_collection] = _payee;
+    collectionRoyalty[_collection] = _royalty;
+    emit CollectionRegistered(_collection, _payee, _royalty);
+  }
+
+  function setRoyaltyByCollectionOwner(address _collection, address _payee, uint16 _royalty) external {
+    require(_royalty <= 10000, "Royalty must be less than 10000");
+    require(owner() == IERC721(_collection).ownerOf(0), "Only collection owner can set royalty");
     collectionPayee[_collection] = _payee;
     collectionRoyalty[_collection] = _royalty;
     emit CollectionRegistered(_collection, _payee, _royalty);
