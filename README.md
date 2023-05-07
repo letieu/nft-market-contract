@@ -42,6 +42,9 @@ npx hardhat run scripts/deploy/offer.ts --network mumbai
 
 # Deploy royalty
 npx hardhat run scripts/deploy/royalty.ts --network mumbai
+
+# Add deployed contract address to .env file
+# Run config scripts
 ```
 
 ## Verify contract
